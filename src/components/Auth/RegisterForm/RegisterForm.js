@@ -5,12 +5,16 @@ import "./RegisterForm.scss";
 export default function RegisterForm(props) {
   const { setShowLogin } = props;
 
+  const onSubmit = () => {
+    console.log("Formulario enviado");
+  };
+
   return (
     <>
       <h2 className="register-form-title">
         Regístrate para ver fotos y vídeos de tus amigos.
       </h2>
-      <Form className="register-form">
+      <Form className="register-form" onSubmit={onSubmit}>
         <Form.Input
           type="text"
           placeholder="Nombre y apellidos"
