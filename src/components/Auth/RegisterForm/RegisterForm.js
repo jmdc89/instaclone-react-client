@@ -30,7 +30,7 @@ export default function RegisterForm(props) {
           type="text"
           placeholder="Nombre y apellidos"
           name="name"
-          //   value={formik.values.name}
+          value={formik.values.name}
           onChange={formik.handleChange}
           //   error={formik.errors.name && true}
         />
@@ -38,7 +38,7 @@ export default function RegisterForm(props) {
           type="text"
           placeholder="Nombre de usuario"
           name="username"
-          //   value={formik.values.username}
+          value={formik.values.username}
           onChange={formik.handleChange}
           //   error={formik.errors.username && true}
         />
@@ -46,7 +46,7 @@ export default function RegisterForm(props) {
           type="text"
           placeholder="Correo electronico"
           name="email"
-          //   value={formik.values.email}
+          value={formik.values.email}
           onChange={formik.handleChange}
           //   error={formik.errors.email && true}
         />
@@ -54,7 +54,7 @@ export default function RegisterForm(props) {
           type="password"
           placeholder="Contraseña"
           name="password"
-          //   value={formik.values.password}
+          value={formik.values.password}
           onChange={formik.handleChange}
           //   error={formik.errors.password && true}
         />
@@ -62,7 +62,7 @@ export default function RegisterForm(props) {
           type="password"
           placeholder="Repetir contraseña"
           name="repeatPassword"
-          //   value={formik.values.repeatPassword}
+          value={formik.values.repeatPassword}
           onChange={formik.handleChange}
           //   error={formik.errors.repeatPassword && true}
         />
