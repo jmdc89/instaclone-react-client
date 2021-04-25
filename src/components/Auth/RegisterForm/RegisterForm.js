@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, Button } from "semantic-ui-react";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 import "./RegisterForm.scss";
 
 export default function RegisterForm(props) {
@@ -14,7 +15,24 @@ export default function RegisterForm(props) {
       password: "",
       repeatPassword: "",
     },
-    validationSchema: null,
+    validationSchema: Yup.object({
+      name: Yup.string().required("Tu nombre es obligatorio"),
+      username: Yup.string()
+        .matches(
+          /^[a-zA-Z0-9-]*$/,
+          "El nombre del usuario no puede tener espacio"
+        )
+        .required("El nombre de usuario es obligatorio"),
+      email: Yup.string()
+        .email("El email no es valido")
+        .required("El email es obligatorio"),
+      password: Yup.string()
+        .required("La contraseña es obligatoria")
+        .oneOf([Yup.ref("repeatPassword")], "Las contraseñas no son iguales"),
+      repeatPassword: Yup.string()
+        .required("La contraseña es obligatoria")
+        .oneOf([Yup.ref("password")], "Las contraseñas no son iguales"),
+    }),
     onSubmit: (formValue) => {
       console.log(formValue);
     },
@@ -32,7 +50,7 @@ export default function RegisterForm(props) {
           name="name"
           value={formik.values.name}
           onChange={formik.handleChange}
-          //   error={formik.errors.name && true}
+          error={formik.errors.name && true}
         />
         <Form.Input
           type="text"
@@ -40,7 +58,7 @@ export default function RegisterForm(props) {
           name="username"
           value={formik.values.username}
           onChange={formik.handleChange}
-          //   error={formik.errors.username && true}
+          error={formik.errors.username && true}
         />
         <Form.Input
           type="text"
@@ -48,7 +66,7 @@ export default function RegisterForm(props) {
           name="email"
           value={formik.values.email}
           onChange={formik.handleChange}
-          //   error={formik.errors.email && true}
+          error={formik.errors.email && true}
         />
         <Form.Input
           type="password"
@@ -56,7 +74,7 @@ export default function RegisterForm(props) {
           name="password"
           value={formik.values.password}
           onChange={formik.handleChange}
-          //   error={formik.errors.password && true}
+          error={formik.errors.password && true}
         />
         <Form.Input
           type="password"
@@ -64,7 +82,7 @@ export default function RegisterForm(props) {
           name="repeatPassword"
           value={formik.values.repeatPassword}
           onChange={formik.handleChange}
-          //   error={formik.errors.repeatPassword && true}
+          error={formik.errors.repeatPassword && true}
         />
         <Button type="submit" className="btn-submit">
           Registrarse
