@@ -1,14 +1,10 @@
 import React from "react";
-import useAuth from "../../hooks/useAuth";
 // import { Grid } from "semantic-ui-react";
 // import Feed from "../../components/Home/Feed";
 // import UsersNotFolloweds from "../../components/Home/UsersNotFolloweds";
-// import "./Home.scss";
+import "./Home.scss";
 
 export default function Home() {
-  const auth = useAuth();
-  console.log(auth);
-
   return (
     <h1>Estamos en Home</h1>
     // <Grid className="home">
