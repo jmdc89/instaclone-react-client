@@ -6,7 +6,7 @@ import userAuth from "../../../hooks/useAuth";
 import UserNotFound from "../../UserNotFound";
 import ModalBasic from "../../Modal/ModalBasic";
 import AvatarForm from "../AvatarForm";
-// import HeaderProfile from "./HeaderProfile";
+import HeaderProfile from "./HeaderProfile";
 // import SettignsForm from "../SettignsForm";
 // import Followers from "./Followers";
 import ImageNoFound from "../../../assets/png/avatar.png";
@@ -63,11 +63,11 @@ export default function Profile(props) {
           />
         </Grid.Column>
         <Grid.Column width={11} className="profile__right">
-          {/* <HeaderProfile
+          <HeaderProfile
             getUser={getUser}
             auth={auth}
             handlerModal={handlerModal}
-          /> */}
+          />
           {/* <Followers
             username={username}
             totalPublications={totalPublications}
