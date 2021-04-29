@@ -7,7 +7,7 @@ import UserNotFound from "../../UserNotFound";
 import ModalBasic from "../../Modal/ModalBasic";
 import AvatarForm from "../AvatarForm";
 import HeaderProfile from "./HeaderProfile";
-// import SettignsForm from "../SettignsForm";
+import SettignsForm from "../SettignsForm";
 // import Followers from "./Followers";
 import ImageNoFound from "../../../assets/png/avatar.png";
 import "./Profile.scss";
@@ -38,13 +38,13 @@ export default function Profile(props) {
       case "settigns":
         setTitleModal("");
         setChildrenModal();
-        // <SettignsForm
-        //   setShowModal={setShowModal}
-        //   setTitleModal={setTitleModal}
-        //   setChildrenModal={setChildrenModal}
-        //   getUser={getUser}
-        //   refetch={refetch}
-        // />
+        <SettignsForm
+          setShowModal={setShowModal}
+          setTitleModal={setTitleModal}
+          setChildrenModal={setChildrenModal}
+          getUser={getUser}
+          refetch={refetch}
+        />;
         setShowModal(true);
         break;
       default:
