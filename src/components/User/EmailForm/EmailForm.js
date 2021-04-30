@@ -28,7 +28,7 @@ export default function EmailForm(props) {
         refetch();
         setShowModal(false);
       } catch (error) {
-        toast.error("Error al actualiar el email");
+        toast.error("Error al actualizar el email");
       }
     },
   });
